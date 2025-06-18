@@ -1,0 +1,62 @@
+.leaderboard-card {
+  background-color: #1d2b53;
+  border-radius: 12px;
+}
+
+.rank-circle {
+  background: linear-gradient(135deg, #00d2ff, #3a47d5);
+  padding: 6px 12px;
+  border-radius: 50px;
+}
+
+/* Make the container fill the viewport but still scroll */
+.home-container {
+  min-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 80px; /* Leave space for fixed-bottom nav */
+}
+
+/* Optional: Prevent content underlap */
+.fixed-bottom {
+  z-index: 1000;
+}
+
+/* Style from before */
+.leaderboard-card {
+  background-color: #1d2b53;
+  border-radius: 12px;
+}
+
+.rank-circle {
+  background: linear-gradient(135deg, #00d2ff, #3a47d5);
+  padding: 6px 12px;
+  border-radius: 50px;
+}
+/* Hide scrollbar for Webkit (Chrome, Edge, Safari) */
+.home-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.home-container {
+  scrollbar-width: none;
+}
+
+/* General scrollable behavior */
+.home-container {
+  min-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 80px;
+}
+
+
+
+/* ==================PROFILE  */
+.gradient-input {
+  background: linear-gradient(to right, #007BFF, #0f0f0f); /* Blue to white */
+  color: #f1f1f1; /* Black text for better readability */
+  border: 1px solid #ccc;
+  font-weight: 500;
+}
+
+
