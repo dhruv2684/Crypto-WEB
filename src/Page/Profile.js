@@ -20,7 +20,7 @@ const Profile = () => {
         const fetchUser = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:5000/api/user/get', {
+                const res = await axios.get('https://crypto-api-quyj.onrender.com/api/user/get', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

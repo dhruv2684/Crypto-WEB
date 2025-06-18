@@ -17,7 +17,7 @@ const Group = () => {
         const fetchReferralData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:5000/api/user/get-refer-user', {
+                const response = await axios.get('https://crypto-api-quyj.onrender.com/api/user/get-refer-user', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
