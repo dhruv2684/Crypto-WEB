@@ -43,3 +43,24 @@
 .icon-wrapper:hover {
   transform: scale(1.1);
 }
+
+
+.coin-animated {
+    animation: pulseCoin 0.5s ease-out;
+    color: #00ffcc;
+}
+
+@keyframes pulseCoin {
+    0% {
+        transform: scale(1);
+        color: #ffffff;
+    }
+    50% {
+        transform: scale(1.3);
+        color: #00ffcc;
+    }
+    100% {
+        transform: scale(1);
+        color: #ffffff;
+    }
+}
