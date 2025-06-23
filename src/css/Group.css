@@ -1,10 +1,12 @@
 .leaderboard-card {
-  background-color: #1d2b53;
+  background: linear-gradient(135deg, #9624dd, #181717) !important;
+
   border-radius: 12px;
 }
 
 .rank-circle {
-  background: linear-gradient(135deg, #00d2ff, #3a47d5);
+  background: linear-gradient(135deg, #9624dd, #400e5f) !important;
+  /* background: linear-gradient(to right, #9624dd, #181717); */
   padding: 6px 12px;
   border-radius: 50px;
 }
@@ -13,7 +15,8 @@
 .home-container {
   min-height: 100vh;
   overflow-y: auto;
-  padding-bottom: 80px; /* Leave space for fixed-bottom nav */
+  padding-bottom: 80px;
+  /* Leave space for fixed-bottom nav */
 }
 
 /* Optional: Prevent content underlap */
@@ -28,10 +31,11 @@
 }
 
 .rank-circle {
-  background: linear-gradient(135deg, #00d2ff, #3a47d5);
+  background: linear-gradient(135deg, #181717, #9624dd);
   padding: 6px 12px;
   border-radius: 50px;
 }
+
 /* Hide scrollbar for Webkit (Chrome, Edge, Safari) */
 .home-container::-webkit-scrollbar {
   display: none;
@@ -53,10 +57,10 @@
 
 /* ==================PROFILE  */
 .gradient-input {
-  background: linear-gradient(to right, #007BFF, #0f0f0f); /* Blue to white */
-  color: #f1f1f1; /* Black text for better readability */
+  background: linear-gradient(to right, #9624dd, #181717) !important;
+  /* Blue to white */
+  color: #f1f1f1;
+  /* Black text for better readability */
   border: 1px solid #ccc;
   font-weight: 500;
 }
-
-

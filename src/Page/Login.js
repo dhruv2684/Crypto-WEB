@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <div className="auth-wrapper">
       <div className="auth-box">
-        <h2>Login</h2>
+        <h2>LOGO With Login</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -68,7 +68,7 @@ const Login = () => {
 
         <p className="switch-link mt-3">
           Don't have an account?{' '}
-          <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: '#007bff' }}>
+          <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: '#9624dd' }}>
             Sign up
           </span>
         </p>

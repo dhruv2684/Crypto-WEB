@@ -65,8 +65,8 @@ const Signup = () => {
     return (
         <div className="auth-wrapper">
             <div className="auth-box">
-                <h2>Sign Up</h2>
-                {message && <p style={{ color: 'orange', fontSize: '14px' }}>{message}</p>}
+                <h2>LOGO With SignUp</h2>
+                {message && <p style={{ color: '#ccc', fontSize: '14px' }}>{message}</p>}
 
                 {step === 1 && (
                     <form onSubmit={sendOtp}>
@@ -142,7 +142,7 @@ const Signup = () => {
 
                 <p className="switch-link mt-3">
                     Already have an account?{' '}
-                    <span onClick={() => navigate('/login')}>Login</span>
+                    <span onClick={() => navigate('/login')} style={{ cursor: 'pointer', color: '#9624dd' }}>Login</span>
                 </p>
             </div>
         </div>

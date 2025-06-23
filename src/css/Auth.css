@@ -1,19 +1,50 @@
+/* Apply full background image with dark overlay */
 .auth-wrapper {
+  position: relative;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(160deg, #0a0a23, #001f3f);
-  color: white;
+  overflow: hidden;
+  z-index: 0;
 }
 
-.auth-box {
+/* Background image layer */
+.auth-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('../image/signup-login-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+/* Dark overlay */
+.auth-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* .auth-box {
   width: 350px;
   padding: 30px;
   border-radius: 15px;
-  background: linear-gradient(to bottom right, #003366, #004080, #0059b3);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
+  background: rgba(0, 0, 0, 0.65); 
+  backdrop-filter: blur(4px);
+  z-index: 1;
+} */
 
 .auth-box h2 {
   text-align: center;
@@ -26,10 +57,9 @@
   border: none;
   border-radius: 8px;
   padding: 12px;
-  background: linear-gradient(to right, #007BFF, #181717);
+  background: linear-gradient(to right, #9624dd, #181717);
   color: #fafafa;
   font-weight: 500;
-  transition: none !important;
 }
 
 .auth-input::placeholder {
@@ -37,24 +67,36 @@
   opacity: 1;
 }
 
-/* Prevent background override on focus */
 .auth-input:focus {
-  background: linear-gradient(to right, #007BFF, #181717);
+  background: linear-gradient(to right, #9624dd, #181717);
   color: #fafafa;
   outline: none;
   box-shadow: none;
 }
 
-/* Prevent background override on hover */
 .auth-input:hover {
-  background: linear-gradient(to right, #007BFF, #181717);
+  background: linear-gradient(to right, #9624dd, #181717);
+
 }
 
-/* Chrome autofill fix */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #007BFF inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #9624dd inset !important;
   -webkit-text-fill-color: #fff !important;
   caret-color: #fff;
+}
+
+.btn-success {
+  background: linear-gradient(to right, #181717, #9624dd) !important;
+  border: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #181717, #9624dd) !important;
+  border: none !important;
+}
+
+.switch-link {
+  color: #ccc;
 }
 
 .switch-link span {

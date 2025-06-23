@@ -71,19 +71,19 @@ const Group = () => {
             ))}
 
             {/* Fixed Bottom Navigation */}
-            <div className="fixed-bottom bg-dark py-md-3 py-1 d-flex justify-content-around">
-                <div className="text-center" onClick={() => navigate('/group')}>
-                    <FaUsers size={24} style={{ color: '#3a47d5' }} />
-                    <span className="d-block" >Group</span>
+            <div className="fixed-bottom  py-md-3 py-1 d-flex justify-content-between">
+                <div className="text-center bg-dark_1 text-dark fw-bold" onClick={() => navigate('/group')}>
+                    <FaUsers size={24} />
+                    <span className="d-block">Group</span>
                 </div>
-                <div className="center-icon">
-                    <div className="icon-wrapper">
-                        <TbCoinFilled className="fs-2" />
-                    </div>
-                </div>
-                <div className="text-center" onClick={() => navigate('/leaderboard')}>
+                {/* <div className="center-icon">
+                                <div className="icon-wrapper">
+                                    <TbCoinFilled className="fs-2" />
+                                </div>
+                            </div> */}
+                <div className="text-center bg-dark_2" onClick={() => navigate('/leaderboard')}>
                     <FaRocket size={24} />
-                    <span className="d-block">LeaderBoard</span>
+                    <span className="d-block">Board</span>
                 </div>
             </div>
         </div>

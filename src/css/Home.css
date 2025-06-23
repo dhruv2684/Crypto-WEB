@@ -4,23 +4,43 @@
   background: radial-gradient(circle at center, #111, #000);
   color: white;
   position: relative;
+  /* background-image: url('../image/home-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2; */
+}
+
+.bg-dark {
+  background: linear-gradient(to right, #9624dd, #181717) !important;
+}
+
+.btn-dark {
+  --bs-btn-bg: linear-gradient(to right, #9624dd, #181717) !important;
+  --bs-btn-border-color: none !important;
 }
 
 .home-content {
   /* overflow-y: auto; */
   padding: 20px 10px;
-  margin-top: 70px;  
-  margin-bottom: 80px; 
+  margin-top: 70px;
+  margin-bottom: 80px;
 }
 
 .power-circle {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: radial-gradient(circle, #222 30%, #000);
+  background: rgba(0, 0, 0, 0.0);
+  /* Transparent dark background */
   border: 2px solid white;
-  box-shadow: 0 0 15px #00f, 0 0 30px #0ff;
+  box-shadow: 0 0 15px #9624dd, 0 0 30px #9624dd;
+  /* Purple glow */
+  backdrop-filter: blur(3px);
+  /* Optional: adds soft blur behind the circle */
+
 }
+
 
 .center-icon {
   position: relative;
@@ -28,7 +48,7 @@
   left: 12px;
 }
 
-.icon-wrapper {
+/* .icon-wrapper {
   width: 60px;
   height: 60px;
   background: linear-gradient(to right, #0f0f3e, #1658e5);
@@ -38,7 +58,7 @@
   align-items: center;
   box-shadow: 0px 4px 15px rgba(22, 88, 229, 0.5);
   transition: transform 0.3s ease;
-}
+} */
 
 .icon-wrapper:hover {
   transform: scale(1.1);
@@ -46,21 +66,49 @@
 
 
 .coin-animated {
-    animation: pulseCoin 0.5s ease-out;
-    color: #00ffcc;
+  animation: pulseCoin 0.5s ease-out;
+  color: #00ffcc;
 }
 
+.bg-dark_1 {
+  background: linear-gradient(to right, #9624dd, #181717) !important;
+  padding: 12px 50px;
+  border-radius: 0px 30px 0px 0px;
+}
+
+.bg-dark_2 {
+  background: linear-gradient(to left, #9624dd, #181717) !important;
+  padding: 12px 50px;
+  border-radius: 30px 0px 0px 0px;
+
+}
+.btn-primary_2{
+  background: linear-gradient(to left, #9624dd, #9624dd) !important;
+  color: black;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
 @keyframes pulseCoin {
-    0% {
-        transform: scale(1);
-        color: #ffffff;
-    }
-    50% {
-        transform: scale(1.3);
-        color: #00ffcc;
-    }
-    100% {
-        transform: scale(1);
-        color: #ffffff;
-    }
+  0% {
+    transform: scale(1);
+    color: #ffffff;
+  }
+
+  50% {
+    transform: scale(1.3);
+    color: #00ffcc;
+  }
+
+  100% {
+    transform: scale(1);
+    color: #ffffff;
+  }
 }

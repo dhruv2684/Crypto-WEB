@@ -162,30 +162,30 @@ const Home = () => {
                         </button>
                     ) : (
                         <>
-                            <button className="btn btn-primary px-5 rounded-pill" onClick={startMining}>
+                            <button className="btn btn-primary_2 px-5 mt-3 rounded-pill" onClick={startMining}>
                                 Start Mining
                             </button>
-                            <div className="small mt-1 text-secondary">
+                            {/* <div className="small mt-1 text-secondary">
                                 Once the clock hits 24, gear up for another mining run!
-                            </div>
+                            </div> */}
                         </>
                     )}
                 </div>
             </div>
 
-            <div className="fixed-bottom bg-dark py-md-3 py-1 d-flex justify-content-around">
-                <div className="text-center" onClick={() => navigate('/group')}>
+            <div className="fixed-bottom  py-md-3 py-1 d-flex justify-content-between">
+                <div className="text-center bg-dark_1" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />
                     <span className="d-block">Group</span>
                 </div>
-                <div className="center-icon">
+                {/* <div className="center-icon">
                     <div className="icon-wrapper">
                         <TbCoinFilled className="fs-2" />
                     </div>
-                </div>
-                <div className="text-center" onClick={() => navigate('/leaderboard')}>
+                </div> */}
+                <div className="text-center bg-dark_2" onClick={() => navigate('/leaderboard')}>
                     <FaRocket size={24} />
-                    <span className="d-block">LeaderBoard</span>
+                    <span className="d-block">Board</span>
                 </div>
             </div>
         </div>

@@ -43,7 +43,7 @@ const Sidebar = ({ children }) => {
                 </div>
                 <ul>
                     <Link to="/home" className="text-white text-decoration-none"><li>Home</li></Link>
-                    <Link to="#" className="text-white text-decoration-none"><li>Rabbit Releases</li></Link>
+                    <Link to="/rabbit-release" className="text-white text-decoration-none"><li>Rabbit Releases</li></Link>
                     <Link to="/group" className="text-white text-decoration-none"><li>Group</li></Link>
                     <Link to="/leaderboard" className="text-white text-decoration-none"><li>LeaderBoard</li></Link>
                     <Link to="/profile" className="text-white text-decoration-none"><li>Setting</li></Link>

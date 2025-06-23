@@ -16,7 +16,7 @@ const LeaderBoard = () => {
 
             <div className="text-center mt-5 pt-3">
                 <p className='px-3 fs-6 text-warning'>
-                   Top 10 RabbitXQ User
+                    Top 10 RabbitXQ User
                 </p>
             </div>
 
@@ -72,19 +72,19 @@ const LeaderBoard = () => {
 
 
             {/* Fixed Bottom Navigation */}
-            <div className="fixed-bottom bg-dark py-md-3 py-1 d-flex justify-content-around">
-                <div className="text-center" onClick={() => navigate('/group')}>
+            <div className="fixed-bottom  py-md-3 py-1 d-flex justify-content-between">
+                <div className="text-center bg-dark_1" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />
                     <span className="d-block">Group</span>
                 </div>
-                <div className="center-icon">
-                    <div className="icon-wrapper">
-                        <TbCoinFilled className="fs-2" />
-                    </div>
-                </div>
-                <div className="text-center" onClick={() => navigate('/leaderboard')}>
-                    <FaRocket size={24}  style={{ color: '#3a47d5' }}/>
-                    <span className="d-block">LeaderBoard</span>
+                {/* <div className="center-icon">
+                                <div className="icon-wrapper">
+                                    <TbCoinFilled className="fs-2" />
+                                </div>
+                            </div> */}
+                <div className="text-center bg-dark_2 text-dark fw-bold" onClick={() => navigate('/leaderboard')}>
+                    <FaRocket size={24} />
+                    <span className="d-block">Board</span>
                 </div>
             </div>
         </div>
