@@ -58,7 +58,7 @@ const Group = () => {
                 <div className="d-flex justify-content-center mt-3 mx-3" key={user._id}>
                     <div className="leaderboard-card d-flex align-items-center justify-content-between px-3 py-2 rounded-4 shadow-sm w-100">
                         <div className="d-flex align-items-center gap-3">
-                            <div className="rank-circle text-white fw-bold">#{index + 1}</div>
+                            <div className="rank-circle fw-bold">#{index + 1}</div>
                             <span className="text-white fw-semibold">{user.username}</span>
                         </div>
                         <div className="text-white fw-semibold">
@@ -71,8 +71,8 @@ const Group = () => {
             ))}
 
             {/* Fixed Bottom Navigation */}
-            <div className="fixed-bottom  py-md-3 py-1 d-flex justify-content-between">
-                <div className="text-center bg-dark_1 text-dark fw-bold" onClick={() => navigate('/group')}>
+            <div className="fixed-bottom  py-md-3 py-1 d-flex justify-content-between bg-black">
+                <div className="text-center bg-dark_1 fw-bold text-pulple" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />
                     <span className="d-block">Group</span>
                 </div>

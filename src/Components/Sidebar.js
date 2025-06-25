@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaHome } from "react-icons/fa";
+import { IoRocket } from "react-icons/io5";
+import { MdGroups } from "react-icons/md";
+import { MdLeaderboard } from "react-icons/md";
+import { IoSettings } from "react-icons/io5";
+import { FaQuestionCircle } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
 import './SidebarLayout.css';
 
 const Sidebar = ({ children }) => {
@@ -42,14 +49,14 @@ const Sidebar = ({ children }) => {
                     <button className="close-btn" onClick={closeSidebar}><FaTimes /></button>
                 </div>
                 <ul>
-                    <Link to="/home" className="text-white text-decoration-none"><li>Home</li></Link>
-                    <Link to="/rabbit-release" className="text-white text-decoration-none"><li>Rabbit Releases</li></Link>
-                    <Link to="/group" className="text-white text-decoration-none"><li>Group</li></Link>
-                    <Link to="/leaderboard" className="text-white text-decoration-none"><li>LeaderBoard</li></Link>
-                    <Link to="/profile" className="text-white text-decoration-none"><li>Setting</li></Link>
-                    <Link to="#" className="text-white text-decoration-none"><li>FAQ</li></Link>
+                    <Link to="/home" className="text-white text-decoration-none"><li><FaHome className='me-2 fs-3 text-purple' />Home</li></Link>
+                    <Link to="/rabbit-release" className="text-white text-decoration-none"><li><IoRocket className='me-2 fs-3 text-purple' />Rabbit Releases</li></Link>
+                    <Link to="/group" className="text-white text-decoration-none"><li><MdGroups className='me-2 fs-3 text-purple' />Group</li></Link>
+                    <Link to="/leaderboard" className="text-white text-decoration-none"><li><MdLeaderboard className='me-2 fs-3 text-purple' />LeaderBoard</li></Link>
+                    <Link to="/profile" className="text-white text-decoration-none"><li><IoSettings className='me-2 fs-3 text-purple' />Setting</li></Link>
+                    <Link to="#" className="text-white text-decoration-none"><li><FaQuestionCircle className='me-2 fs-3 text-purple' />FAQ</li></Link>
                     <span className="text-white text-decoration-none" onClick={() => setShowLogoutConfirm(true)}>
-                        <li>Sign Out</li>
+                        <li><FaSignOutAlt className='me-2 fs-3 text-purple' />Sign Out</li>
                     </span>
                 </ul>
             </div>

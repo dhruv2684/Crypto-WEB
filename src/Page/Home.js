@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaBolt, FaUsers, FaRocket } from 'react-icons/fa';
-import { TbCoinFilled } from 'react-icons/tb';
 import Sidebar from '../Components/Sidebar';
 import '../css/Home.css';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +16,7 @@ const Home = () => {
     const socketRef = useRef(null);
     const prevCoinsRef = useRef(coins);
 
+    // ✅ Fetch mining session status
     useEffect(() => {
         const checkSessionStatus = async () => {
             const token = localStorage.getItem("token");
@@ -27,20 +27,17 @@ const Home = () => {
                     },
                 });
 
-                if (res.data.activeSession) {
-                    const startTime = new Date(res.data.sessionStartTime);
-                    setMiningStartTime(startTime);
-                    localStorage.setItem("miningStartTime", startTime.toISOString());
+                const startTime = res.data.sessionStartTime ? new Date(res.data.sessionStartTime) : null;
+                setMiningStartTime(startTime);
 
-                    const coinValue = parseFloat(res.data.coins?.$numberDecimal || res.data.coins || "0");
-                    setCoins(coinValue);
-                    prevCoinsRef.current = coinValue;
+                const coinValue = parseFloat(res.data.coins?.$numberDecimal || res.data.coins || "0");
+                setCoins(coinValue);
+                prevCoinsRef.current = coinValue;
+
+                if (startTime) {
+                    localStorage.setItem("miningStartTime", startTime.toISOString());
                 } else {
-                    setMiningStartTime(null);
                     localStorage.removeItem("miningStartTime");
-                    const coinValue = parseFloat(res.data.coins?.$numberDecimal || res.data.coins || "0");
-                    setCoins(coinValue);
-                    prevCoinsRef.current = coinValue;
                 }
             } catch (error) {
                 console.error("Error checking session status:", error);
@@ -50,23 +47,24 @@ const Home = () => {
         checkSessionStatus();
     }, []);
 
+    // ✅ Socket.io connection & listeners
     useEffect(() => {
         const socket = io("https://crypto-api-quyj.onrender.com");
         socketRef.current = socket;
 
         const userId = localStorage.getItem("userId");
-
         if (userId) {
+            console.log("📡 Joining room:", userId);
             socket.emit("join", userId);
         }
 
         socket.on("coin_updated", (data) => {
             if (data.userId?.toString() === userId) {
                 const newCoins = parseFloat(data.coins?.$numberDecimal || data.coins || 0);
-                
+
                 if (newCoins > prevCoinsRef.current) {
                     setCoinChangeAnim(true);
-                    setTimeout(() => setCoinChangeAnim(false), 500);
+                    setTimeout(() => setCoinChangeAnim(false), 200);
                 }
 
                 setCoins(newCoins);
@@ -84,6 +82,7 @@ const Home = () => {
         };
     }, []);
 
+    // ✅ Countdown Timer
     useEffect(() => {
         if (miningStartTime) {
             const interval = setInterval(() => {
@@ -109,6 +108,7 @@ const Home = () => {
         }
     }, [miningStartTime]);
 
+    // ✅ Start mining button action
     const startMining = async () => {
         try {
             const token = localStorage.getItem("token");
@@ -162,27 +162,19 @@ const Home = () => {
                         </button>
                     ) : (
                         <>
-                            <button className="btn btn-primary_2 px-5 mt-3 rounded-pill" onClick={startMining}>
+                            <button className="btn btn-primary_2 px-5 mt-5 rounded-pill" onClick={startMining}>
                                 Start Mining
                             </button>
-                            {/* <div className="small mt-1 text-secondary">
-                                Once the clock hits 24, gear up for another mining run!
-                            </div> */}
                         </>
                     )}
                 </div>
             </div>
 
-            <div className="fixed-bottom  py-md-3 py-1 d-flex justify-content-between">
+            <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black">
                 <div className="text-center bg-dark_1" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />
                     <span className="d-block">Group</span>
                 </div>
-                {/* <div className="center-icon">
-                    <div className="icon-wrapper">
-                        <TbCoinFilled className="fs-2" />
-                    </div>
-                </div> */}
                 <div className="text-center bg-dark_2" onClick={() => navigate('/leaderboard')}>
                     <FaRocket size={24} />
                     <span className="d-block">Board</span>

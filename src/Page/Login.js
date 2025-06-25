@@ -26,6 +26,7 @@ const Login = () => {
       // Store token and user in localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('userId', user.id);
 
       // Redirect after login (e.g., to dashboard)
       navigate('/home'); // or wherever you want to go
