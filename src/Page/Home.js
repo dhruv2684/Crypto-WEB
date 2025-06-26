@@ -21,7 +21,7 @@ const Home = () => {
         const checkSessionStatus = async () => {
             const token = localStorage.getItem("token");
             try {
-                const res = await axios.get("https://crypto-api-production-7139.up.railway.app//api/user/session-status", {
+                const res = await axios.get("https://crypto-api-production-7139.up.railway.app/api/user/session-status", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -49,7 +49,7 @@ const Home = () => {
 
     // ✅ Socket.io connection & listeners
     useEffect(() => {
-        const socket = io("https://crypto-api-production-7139.up.railway.app/");
+        const socket = io("https://crypto-api-production-7139.up.railway.app");
         socketRef.current = socket;
 
         const userId = localStorage.getItem("userId");
@@ -112,7 +112,7 @@ const Home = () => {
     const startMining = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.post("https://crypto-api-production-7139.up.railway.app//api/user/start-session", {}, {
+            const res = await axios.post("https://crypto-api-production-7139.up.railway.app/api/user/start-session", {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

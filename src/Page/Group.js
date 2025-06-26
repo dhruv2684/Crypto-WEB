@@ -17,7 +17,7 @@ const Group = () => {
         const fetchReferralData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('https://crypto-api-production-7139.up.railway.app//api/user/get-refer-user', {
+                const response = await axios.get('https://crypto-api-production-7139.up.railway.app/api/user/get-refer-user', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

@@ -20,7 +20,7 @@ const Profile = () => {
         const fetchUser = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await axios.get('https://crypto-api-production-7139.up.railway.app//api/user/get', {
+                const res = await axios.get('https://crypto-api-production-7139.up.railway.app/api/user/get', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
