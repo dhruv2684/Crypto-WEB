@@ -1,0 +1,102 @@
+/* RabbitRelease.css */
+
+.release-container {
+  padding: 20px;
+  background: #0d0d0d;
+  color: white;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-y: auto;             /* Allow scroll */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+
+/* Hide scrollbar for WebKit (Chrome, Safari) */
+.release-container::-webkit-scrollbar {
+  display: none;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ab47bc;
+  font-size: 2rem;
+}
+
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.release-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(150, 36, 221, 0.2);
+}
+
+.release-card:hover {
+  transform: scale(1.03);
+  border-color: #9624dd;
+}
+
+.release-card .date {
+  color: #888;
+  font-size: 14px;
+}
+
+.release-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  overflow-y: auto; /* allow modal scroll if needed */
+}
+
+.release-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-content {
+  background: #1e1e1e;
+  padding: 30px;
+  max-width: 700px;
+  width: 90%;
+  border-radius: 12px;
+  overflow-y: auto;
+  max-height: 90vh;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 20px rgba(150, 36, 221, 0.4);
+  scrollbar-width: none;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #f44336;
+}
+
+.details pre {
+  margin-top: 15px;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-family: inherit;
+}

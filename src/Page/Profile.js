@@ -17,6 +17,14 @@ const Profile = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/login");
+        }
+    }, [navigate]);
+
+
+    useEffect(() => {
         const fetchUser = async () => {
             try {
                 const token = localStorage.getItem('token');

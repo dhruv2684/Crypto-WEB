@@ -14,6 +14,14 @@ const Group = () => {
     const [referredUsers, setReferredUsers] = useState([]);
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/login");
+        }
+    }, [navigate]);
+
+
+    useEffect(() => {
         const fetchReferralData = async () => {
             try {
                 const token = localStorage.getItem('token');

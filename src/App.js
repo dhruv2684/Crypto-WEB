@@ -7,6 +7,7 @@ import LeaderBoard from './Page/LeaderBoard';
 import Profile from './Page/Profile';
 import Signup from './Page/Signup';
 import Login from './Page/Login';
+import RabbitRelease from './Page/Rabbitrelease';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/group" element={<Group />} />
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/rabbit-release" element={<RabbitRelease />} />
       </Routes>
     </Router>
   );

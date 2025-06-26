@@ -1,5 +1,5 @@
 import '../css/Group.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaUsers, FaRocket } from 'react-icons/fa';
 import { TbCoinFilled } from 'react-icons/tb';
 import Sidebar from '../Components/Sidebar';
@@ -8,6 +8,14 @@ import { useNavigate } from 'react-router-dom';
 const LeaderBoard = () => {
     const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/login");
+        }
+    }, [navigate]);
+
 
     return (
         <div className="home-container d-flex flex-column text-white">
