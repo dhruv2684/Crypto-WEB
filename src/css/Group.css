@@ -1,10 +1,11 @@
 .leaderboard-card {
   /* background: linear-gradient(135deg, #9624dd, #181717) !important; */
-  border: 1px solid #9624dd36;
+  border: 1px solid #1b70c571;
   border-radius: 12px;
 }
-.text-pulple{
-  color: #9624dd;
+
+.text-pulple {
+  color: #1b70c5;
 }
 
 /* Make the container fill the viewport but still scroll */
@@ -19,15 +20,16 @@
 .fixed-bottom {
   z-index: 1000;
 }
-.text-info{
-  color: #9624dd;
-} 
+
+.text-info {
+  color: #1b70c5 !important;
+}
 
 .rank-circle {
   /* background: linear-gradient(135deg, #181717, #9624dd);
   border-radius: 50px; */
   padding: 6px 12px;
-  color: #9624dd;
+  color: #1b70c5;
 }
 
 /* Hide scrollbar for Webkit (Chrome, Edge, Safari) */
@@ -51,10 +53,30 @@
 
 /* ==================PROFILE  */
 .gradient-input {
-  background: linear-gradient(to right, #9624dd, #181717) !important;
+  background: linear-gradient(to right, #1b70c5, #181717) !important;
   /* Blue to white */
   color: #f1f1f1;
   /* Black text for better readability */
   border: 1px solid #ccc;
   font-weight: 500;
+}
+
+.btn-info {
+  background-color: transparent !important;
+  border: none !important;
+  color: #1b70c5 !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  padding: 0 0 0 0 !important;
+  margin: 0 0 0 10px !important;
+}
+
+/* Make default toast icon white */
+.Toastify__toast-icon svg {
+  fill: white !important;
+}
+
+/* Make progress bar white */
+.Toastify__progress-bar {
+  background: white !important;
 }

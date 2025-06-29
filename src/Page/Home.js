@@ -1,5 +1,3 @@
-// src/pages/Home.js
-
 import React, { useState, useEffect, useRef } from 'react';
 import { FaBolt, FaUsers, FaRocket } from 'react-icons/fa';
 import Sidebar from '../Components/Sidebar';
@@ -7,7 +5,10 @@ import '../css/Home.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import CountUp from 'react-countup';
-import socket from '../utils/socket'; // ✅ Import singleton socket
+import socket from '../utils/socket';
+import releases from '../releaseData';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -15,6 +16,8 @@ const Home = () => {
     const [timeLeft, setTimeLeft] = useState(null);
     const [coins, setCoins] = useState(0);
     const [coinChangeAnim, setCoinChangeAnim] = useState(false);
+    const [selectedRelease, setSelectedRelease] = useState(null);
+
     const navigate = useNavigate();
     const prevCoinsRef = useRef(0);
 
@@ -25,8 +28,6 @@ const Home = () => {
         }
     }, [navigate]);
 
-
-    // ✅ Fetch mining session status
     useEffect(() => {
         const checkSessionStatus = async () => {
             const token = localStorage.getItem("token");
@@ -57,12 +58,11 @@ const Home = () => {
         checkSessionStatus();
     }, []);
 
-    // ✅ Socket.io connection & listeners (singleton, with cleanup)
     useEffect(() => {
         const userId = localStorage.getItem("userId");
 
         if (!socket.connected) {
-            socket.connect(); // ✅ Only connect once
+            socket.connect();
         }
 
         if (userId) {
@@ -97,7 +97,6 @@ const Home = () => {
         };
     }, [coins]);
 
-    // ✅ Countdown Timer
     useEffect(() => {
         if (miningStartTime) {
             const interval = setInterval(() => {
@@ -123,7 +122,13 @@ const Home = () => {
         }
     }, [miningStartTime]);
 
-    // ✅ Start mining button
+    useEffect(() => {
+        document.body.style.overflow = selectedRelease ? 'hidden' : 'auto';
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [selectedRelease]);
+
     const startMining = async () => {
         try {
             const token = localStorage.getItem("token");
@@ -141,6 +146,19 @@ const Home = () => {
                 const coinValue = parseFloat(res.data.coins?.$numberDecimal || res.data.coins || 0);
                 setCoins(coinValue);
                 prevCoinsRef.current = coinValue;
+
+                // ✅ Show toast
+                toast.success("Mining started successfully!", {
+                    style: {
+                        background: '#1b70c5',
+                        color: 'white',
+                        fontWeight: 'bold',
+                    },
+                    icon: '⚡',
+                    progressStyle: {
+                        background: 'white',
+                    },
+                });
             }
         } catch (err) {
             console.error("Error starting mining:", err);
@@ -163,19 +181,19 @@ const Home = () => {
                     </h1>
                     <div className="dropdown mt-2">
                         <button className="btn btn-dark dropdown-toggle" type="button">
-                            ATP BlockDAG Server
+                            ATP RBXQ Server
                         </button>
                     </div>
-                    <div className="text-white small mt-1">0.05 BDAG/h</div>
+                    <div className="text-white small mt-1">0.05 RBXQ/h</div>
                 </div>
 
-                <div className="d-flex justify-content-center align-items-center mt-4">
+                <div className="d-flex justify-content-center align-items-center mt-5 pt-5">
                     <div className="power-circle d-flex justify-content-center align-items-center">
                         <FaBolt size={48} color="white" />
                     </div>
                 </div>
 
-                <div className="text-center mt-4">
+                <div className="text-center mtb-5">
                     {miningStartTime ? (
                         <button className="btn mt-4 btn-success px-5 rounded-pill" disabled>
                             {timeLeft || "Mining..."}
@@ -186,6 +204,34 @@ const Home = () => {
                         </button>
                     )}
                 </div>
+
+                {/* 🐇 Rabbit Releases Section */}
+                <div className="text-center mt-5 pt-3">
+                    <div className="release-grid mt-3">
+                        {releases.map((release, index) => (
+                            <div key={index} className="release-card" onClick={() => setSelectedRelease(release)}>
+                                <h5>{release.version}</h5>
+                                <p><strong>{release.title}</strong></p>
+                                <p className="date">{release.date}</p>
+                                <p>{release.summary}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* 📜 Modal */}
+                {selectedRelease && (
+                    <div className="release-modal">
+                        <div className="modal-content">
+                            <span className="close" onClick={() => setSelectedRelease(null)}>&times;</span>
+                            <h2>{selectedRelease.version} – {selectedRelease.title}</h2>
+                            <p><strong>Date:</strong> {selectedRelease.date}</p>
+                            <div className="details">
+                                <pre>{selectedRelease.fullDetails}</pre>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
 
             <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black">
@@ -198,6 +244,9 @@ const Home = () => {
                     <span className="d-block">Board</span>
                 </div>
             </div>
+
+            {/* ✅ Toast Container */}
+            <ToastContainer position="top-center" autoClose={2000} hideProgressBar={false} />
         </div>
     );
 };

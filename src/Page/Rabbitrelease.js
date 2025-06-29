@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'; // ✅ include useEffect
 import releases from '../releaseData';
 import './RabbitRelease.css';
+import Sidebar from '../Components/Sidebar';
 
 const RabbitRelease = () => {
   const [selectedRelease, setSelectedRelease] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // 🔁 Lock body scroll when modal is open
   useEffect(() => {
@@ -15,7 +17,9 @@ const RabbitRelease = () => {
 
   return (
     <div className="release-container">
-      <h2 className="title">🐇 RabbitXQ Releases</h2>
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+      <h2 className="title mt-5">🐇 RabbitXQ Releases</h2>
 
       <div className="release-grid">
         {releases.map((release, index) => (

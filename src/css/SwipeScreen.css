@@ -1,0 +1,103 @@
+.mobile-view {
+  max-width: 375px;
+  margin: 0 auto;
+  height: 100vh;
+  background: linear-gradient(0deg, #030308, #04192e) !important;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.top-section {
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.icon-placeholder {
+  width: 30px;
+  height: 30px;
+  background: #00f0ff;
+  border-radius: 5px;
+}
+
+.h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.swipe-button {
+  background: #222;
+  border-radius: 25px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #444;
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.swipe-label {
+  flex-grow: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.arrow {
+  background: #007bff;
+  border-radius: 50%;
+  padding: 8px 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.draggable-arrow {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transition: transform 0.1s ease-out;
+  z-index: 2;
+}

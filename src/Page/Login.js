@@ -69,7 +69,7 @@ const Login = () => {
 
         <p className="switch-link mt-3">
           Don't have an account?{' '}
-          <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: '#9624dd' }}>
+          <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: '#1e7ad6' }}>
             Sign up
           </span>
         </p>

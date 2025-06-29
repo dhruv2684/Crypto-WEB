@@ -142,7 +142,7 @@ const Signup = () => {
 
                 <p className="switch-link mt-3">
                     Already have an account?{' '}
-                    <span onClick={() => navigate('/login')} style={{ cursor: 'pointer', color: '#9624dd' }}>Login</span>
+                    <span onClick={() => navigate('/login')} style={{ cursor: 'pointer', color: '#1e7ad6' }}>Login</span>
                 </p>
             </div>
         </div>

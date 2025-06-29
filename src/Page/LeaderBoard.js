@@ -95,7 +95,7 @@ const LeaderBoard = () => {
                                     <TbCoinFilled className="fs-2" />
                                 </div>
                             </div> */}
-                <div className="text-center bg-dark_2 .text-pulple fw-bold" onClick={() => navigate('/leaderboard')}>
+                <div className="text-center bg-dark_2 text-pulple fw-bold" onClick={() => navigate('/leaderboard')}>
                     <FaRocket size={24} />
                     <span className="d-block">Board</span>
                 </div>

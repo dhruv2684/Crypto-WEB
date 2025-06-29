@@ -8,12 +8,14 @@ import Profile from './Page/Profile';
 import Signup from './Page/Signup';
 import Login from './Page/Login';
 import RabbitRelease from './Page/Rabbitrelease';
+import SwipeScreen from './Components/SwipeScreen';
 
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<SwipeScreen />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />

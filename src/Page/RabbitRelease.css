@@ -2,13 +2,16 @@
 
 .release-container {
   padding: 20px;
-  background: #0d0d0d;
+  background: linear-gradient(0deg, #030308, #04192e) !important;
   color: white;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  overflow-y: auto;             /* Allow scroll */
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE/Edge */
+  overflow-y: auto;
+  /* Allow scroll */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
 }
 
 /* Hide scrollbar for WebKit (Chrome, Safari) */
@@ -19,8 +22,8 @@
 .title {
   text-align: center;
   margin-bottom: 20px;
-  color: #ab47bc;
-  font-size: 2rem;
+  color: #1c6ab8;
+  font-size: 26px;
 }
 
 .release-grid {
@@ -30,18 +33,19 @@
 }
 
 .release-card {
-  background: #1c1c1c;
+  /* background: #1c1c1c; */
   border: 1px solid #333;
   border-radius: 12px;
   padding: 20px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(150, 36, 221, 0.2);
+  border-color: #1c6ab8;
+  /* box-shadow: 0 0px 5px #1c6ab8 !important; */
 }
 
 .release-card:hover {
+  border-color: #1c6ab8;
   transform: scale(1.03);
-  border-color: #9624dd;
 }
 
 .release-card .date {
@@ -60,7 +64,8 @@
   align-items: center;
   justify-content: center;
   z-index: 999;
-  overflow-y: auto; /* allow modal scroll if needed */
+  overflow-y: auto;
+  /* allow modal scroll if needed */
 }
 
 .release-modal::-webkit-scrollbar {
@@ -68,8 +73,10 @@
 }
 
 .modal-content {
-  background: #1e1e1e;
+  background: linear-gradient(0deg, #030308, #04192e) !important;
   padding: 30px;
+  margin-top: 83px;
+  margin-bottom: 10px;
   max-width: 700px;
   width: 90%;
   border-radius: 12px;
@@ -77,7 +84,6 @@
   max-height: 90vh;
   color: white;
   position: relative;
-  box-shadow: 0 0 20px rgba(150, 36, 221, 0.4);
   scrollbar-width: none;
 }
 
@@ -87,11 +93,11 @@
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 28px;
+  top: -15px;
+  right: 10px;
+  font-size: 42px;
   cursor: pointer;
-  color: #f44336;
+  color: #1c6ab8;
 }
 
 .details pre {
