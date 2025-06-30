@@ -147,7 +147,6 @@ const Home = () => {
                 setCoins(coinValue);
                 prevCoinsRef.current = coinValue;
 
-                // ✅ Show toast
                 toast.success("Mining started successfully!", {
                     style: {
                         background: '#1b70c5',
@@ -167,32 +166,34 @@ const Home = () => {
 
     return (
         <div className="home-container d-flex flex-column text-white">
-            <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+            {/* ✅ Sidebar with coin props */}
+            <Sidebar
+                sidebarOpen={sidebarOpen}
+                setSidebarOpen={setSidebarOpen}
+                coins={coins}
+                coinChangeAnim={coinChangeAnim}
+            />
 
             <div className="home-content flex-grow-1 mt-5 mb-1">
-                <div className="text-center mt-4">
-                    <h1 className={`fw-bold text-white display-6 ${coinChangeAnim ? 'coin-animated' : ''}`}>
-                        <CountUp
-                            start={prevCoinsRef.current}
-                            end={coins}
-                            decimals={4}
-                            duration={1.25}
-                        />
-                    </h1>
-                    <div className="dropdown mt-2">
-                        <button className="btn btn-dark dropdown-toggle" type="button">
+                {/* ✅ Removed coin display from center */}
+                {/* ✅ Removed coin display from center */}
+                <div className="home-content flex-grow-1 mt-5 mb-1">
+                    <div className=" mt-2  text-center">
+                        <div className="text-center">
                             ATP RBXQ Server
-                        </button>
+                        </div>
                     </div>
-                    <div className="text-white small mt-1">0.05 RBXQ/h</div>
+                    <div className="text-white small mt-1 text-center">0.05 RBXQ/h</div>
                 </div>
 
+                {/* ⚡ Power button */}
                 <div className="d-flex justify-content-center align-items-center mt-5 pt-5">
                     <div className="power-circle d-flex justify-content-center align-items-center">
                         <FaBolt size={48} color="white" />
                     </div>
                 </div>
 
+                {/* 🟢 Mining button */}
                 <div className="text-center mtb-5">
                     {miningStartTime ? (
                         <button className="btn mt-4 btn-success px-5 rounded-pill" disabled>
@@ -234,6 +235,7 @@ const Home = () => {
                 )}
             </div>
 
+            {/* ⬇️ Fixed bottom menu */}
             <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black">
                 <div className="text-center bg-dark_1" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />

@@ -130,3 +130,18 @@ body.sidebar-open {
 .text-purple {
     color: #1684f3;
 }
+
+.coin-animated {
+    animation: pulseCoin 0.3s ease-in-out;
+}
+
+@keyframes pulseCoin {
+    0% {
+        transform: scale(1.1);
+        color: #ffd700;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

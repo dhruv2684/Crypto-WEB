@@ -33,7 +33,7 @@
 }
 
 .release-card {
-  /* background: #1c1c1c; */
+  background: #1c6ab82e;
   border: 1px solid #333;
   border-radius: 12px;
   padding: 20px;
@@ -75,8 +75,8 @@
 .modal-content {
   background: linear-gradient(0deg, #030308, #04192e) !important;
   padding: 30px;
-  margin-top: 83px;
-  margin-bottom: 10px;
+  margin-top: px;
+  margin-bottom: 20px;
   max-width: 700px;
   width: 90%;
   border-radius: 12px;

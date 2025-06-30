@@ -1,16 +1,40 @@
 .home-container {
-  height: 100vh;
-  overflow: hidden;
-  /* background: radial-gradient(circle at center, #111, #000); */
-  background: linear-gradient(0deg, #030308, #04192e) !important;
-  color: white;
   position: relative;
-  /* background-image: url('../image/home-bg.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2; */
+  height: 100vh;
+  color: white;
+  overflow-x: hidden;
+  z-index: 0; /* Ensure it's clickable */
 }
+
+/* 🌄 Background image layer with opacity */
+.home-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../image/home-bg-1.jpeg');
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+/* 🎨 Gradient overlay layer */
+.home-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #030308, #04192e); /* 👈 Gradient top to bottom */
+  z-index: -1;
+  opacity: 0.6; /* 👈 Control gradient strength */
+}
+
+
 
 .bg-dark {
   background: linear-gradient(280deg, #030308, #04192e) !important;
@@ -79,12 +103,12 @@
   /* background: linear-gradient(to right, #000000, #000000) !important; */
   padding: 12px 50px;
   border-radius: 30px 30px 0px 0px;
-  border-top: 1px solid #001f3f;
+  border-top: 2px solid #155fa8;
 }
 
 .bg-dark_2 {
   /* background: linear-gradient(to left, #000000, #000000) !important; */
-  border-top: 1px solid #001f3f;
+  border-top: 2px solid #155fa8;
   padding: 12px 50px;
   border-radius: 30px 30px 0px 0px;
 
@@ -131,6 +155,6 @@
   animation: coinFlash 0.5s ease;
 }
 
-.mtb-5{
+.mtb-5 {
   margin-top: 6rem;
 }

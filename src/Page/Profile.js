@@ -57,10 +57,10 @@ const Profile = () => {
                 {error && <p className="text-danger">{error}</p>}
 
                 <div className="form-group mb-3">
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username" className='text-blue mb-2 ms-2'>Username</label>
                     <input
                         type="text"
-                        className="form-control gradient-input"
+                        className=" gradient-input "
                         id="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
@@ -69,10 +69,10 @@ const Profile = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" className='text-blue mb-2 ms-2'>Email</label>
                     <input
                         type="email"
-                        className="form-control gradient-input"
+                        className=" gradient-input"
                         id="email"
                         value={email}
                         readOnly
@@ -80,10 +80,10 @@ const Profile = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                    <label htmlFor="referCode">Refer Code</label>
+                    <label htmlFor="referCode" className='text-blue mb-2 ms-2'>Refer Code</label>
                     <input
                         type="text"
-                        className="form-control gradient-input"
+                        className=" gradient-input"
                         id="referCode"
                         value={referCode}
                         readOnly
