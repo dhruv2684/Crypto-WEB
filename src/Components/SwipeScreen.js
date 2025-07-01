@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 Import this
+import React, { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/SwipeScreen.css';
 
 const SwipeScreen = () => {
@@ -8,7 +8,14 @@ const SwipeScreen = () => {
   const [startX, setStartX] = useState(0);
   const [translateX, setTranslateX] = useState(0);
 
-  const navigate = useNavigate(); // 👈 Initialize navigate
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+    }
+  }, []);
 
   const handleStart = (e) => {
     setDragging(true);
@@ -20,7 +27,7 @@ const SwipeScreen = () => {
     if (!dragging) return;
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const containerWidth = containerRef.current.offsetWidth;
-    const diff = Math.min(clientX - startX, containerWidth - 50); // 50 is arrow size
+    const diff = Math.min(clientX - startX, containerWidth - 50);
     if (diff >= 0) {
       setTranslateX(diff);
     }
@@ -33,10 +40,11 @@ const SwipeScreen = () => {
     const containerWidth = containerRef.current.offsetWidth;
 
     if (translateX >= containerWidth - 60) {
-      navigate('/login'); // 👈 Redirect instead of alert
+      localStorage.setItem('swiped', 'true');
+      navigate('/home');
     }
 
-    setTranslateX(0); // Reset arrow
+    setTranslateX(0);
   };
 
   return (

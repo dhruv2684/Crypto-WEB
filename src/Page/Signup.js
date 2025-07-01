@@ -140,7 +140,7 @@ const Signup = () => {
                     </form>
                 )}
 
-                <p className="switch-link mt-3">
+                <p className="switch-link mt-3 text-center">
                     Already have an account?{' '}
                     <span onClick={() => navigate('/login')} style={{ cursor: 'pointer', color: '#1e7ad6' }}>Login</span>
                 </p>

@@ -46,8 +46,7 @@
 /* Sidebar Links */
 .sidebar ul {
     list-style: none;
-    padding: 80px 20px 0 20px;
-    /* adjust top for header */
+    padding: 80px 20px 0 20px; /* adjust top for header */
 }
 
 .sidebar ul li {
@@ -95,38 +94,53 @@ body.sidebar-open {
     z-index: 100;
 }
 
-/* Logout popup */
+/* 🚨 Logout Popup Fixed */
 .logout-popup {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 9999;
-    background-color: rgba(17, 17, 17, 0.95);
-    padding: 20px 0;
+    background-color: #1685f30a;
+    padding: 40px 0 60px 0; /* Increased height */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     animation: slideUp 0.3s ease-out;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* 📦 Popup box */
 .popup-inner {
-    background-color: #222;
-    border-radius: 12px;
-    padding: 15px;
+    background-color: #04192e;
+    border-radius: 16px;
+    padding: 20px 25px;
     width: 90%;
-    max-width: 300px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+}
+.btn-danger{
+    background-color: #1684f3 !important;
+    border: none !important;
+    padding: 8px 12px !important;
 }
 
 /* Slide animation */
 @keyframes slideUp {
     from {
         transform: translateY(100%);
+        opacity: 0;
     }
-
     to {
         transform: translateY(0%);
+        opacity: 1;
     }
 }
 
+/* Coin animation */
 .text-purple {
     color: #1684f3;
 }
@@ -140,7 +154,6 @@ body.sidebar-open {
         transform: scale(1.1);
         color: #ffd700;
     }
-
     100% {
         transform: scale(1);
     }

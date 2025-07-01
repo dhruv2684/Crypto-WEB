@@ -1,4 +1,5 @@
-/* Apply full background image with dark overlay */
+/* ========== Login Page Styles ========== */
+
 .auth-wrapper {
   position: relative;
   min-height: 100vh;
@@ -10,42 +11,39 @@
   z-index: 0;
 }
 
-/* Background image layer */
 .auth-wrapper::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  /* background-image: url('../image/signup-login-bg.jpeg'); */
-  background: linear-gradient(0deg, #030308, #04192e) !important;
+  background-image: url('../image/home-bg-2.jpeg'); /* 👈 Use your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -2;
 }
 
-/* Dark overlay */
-/* .auth-wrapper::after {
+.auth-wrapper::after {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(0deg, #030308, #04192e);
+  opacity: 0.9;
   z-index: -1;
-} */
+}
 
-/* .auth-box {
+.auth-box {
   width: 350px;
   padding: 30px;
   border-radius: 15px;
-  background: rgba(0, 0, 0, 0.65); 
   backdrop-filter: blur(4px);
   z-index: 1;
-} */
+}
 
 .auth-box h2 {
   text-align: center;
@@ -58,9 +56,7 @@
   border: none;
   border-radius: 8px;
   padding: 12px;
-  /* background: linear-gradient(to right, #9624dd, #181717); */
   background: linear-gradient(80deg, #001f3f, #0a0a23);
-
   color: #fafafa;
   font-weight: 500;
 }
@@ -71,19 +67,14 @@
 }
 
 .auth-input:focus {
-  /* background: linear-gradient(to right, #9624dd, #181717); */
   background: linear-gradient(80deg, #001f3f, #0a0a23);
-
   color: #fafafa;
   outline: none;
   box-shadow: none;
 }
 
 .auth-input:hover {
-  /* background: linear-gradient(to right, #9624dd, #181717); */
   background: linear-gradient(80deg, #001f3f, #0a0a23);
-
-
 }
 
 input:-webkit-autofill {
@@ -94,11 +85,6 @@ input:-webkit-autofill {
 }
 
 .btn-success {
-  background: linear-gradient(80deg, #10467c) !important;
-  border: none !important;
-}
-
-.btn-primary {
   background: linear-gradient(80deg, #10467c) !important;
   border: none !important;
 }

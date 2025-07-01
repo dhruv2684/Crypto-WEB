@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/Auth.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Make sure axios is installed
+import axios from 'axios';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -23,13 +23,11 @@ const Login = () => {
       const res = await axios.post('https://crypto-api-production-7139.up.railway.app/api/user/login', formData);
       const { token, user } = res.data;
 
-      // Store token and user in localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('userId', user.id);
 
-      // Redirect after login (e.g., to dashboard)
-      navigate('/home'); // or wherever you want to go
+      navigate('/'); // redirect after login
     } catch (err) {
       if (err.response) {
         setError(err.response.data.message);
@@ -67,7 +65,7 @@ const Login = () => {
 
         {error && <p className="text-danger mt-2">{error}</p>}
 
-        <p className="switch-link mt-3">
+        <p className="switch-link mt-3 text-center">
           Don't have an account?{' '}
           <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: '#1e7ad6' }}>
             Sign up

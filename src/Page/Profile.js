@@ -16,12 +16,12 @@ const Profile = () => {
     const [referCode, setReferCode] = useState('');
     const [error, setError] = useState('');
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            navigate("/login");
-        }
-    }, [navigate]);
+    // useEffect(() => {
+    //     const token = localStorage.getItem("token");
+    //     if (!token) {
+    //         navigate("/login");
+    //     }
+    // }, [navigate]);
 
 
     useEffect(() => {

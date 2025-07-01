@@ -19,10 +19,12 @@ const Sidebar = ({ children, sidebarOpen, setSidebarOpen, coins, coinChangeAnim 
     const closeSidebar = () => setIsOpen(false);
 
     const handleSignOut = () => {
-        localStorage.removeItem('tokenUser');
+        localStorage.clear();
         setShowLogoutConfirm(false);
         navigate('/login');
     };
+
+
 
     useEffect(() => {
         if (isOpen) {
@@ -109,8 +111,8 @@ const Sidebar = ({ children, sidebarOpen, setSidebarOpen, coins, coinChangeAnim 
             {/* Logout Confirmation */}
             {showLogoutConfirm && (
                 <div className="logout-popup d-flex flex-column justify-content-center align-items-center text-white">
-                    <div className="popup-inner p-3 text-center">
-                        <p className="mb-2 fw-bold">Are you sure you want to sign out?</p>
+                    <div className="popup-inner text-center">
+                        <p className="mb-4 fw-bold">Are you sure you want to sign out?</p>
                         <div className="d-flex justify-content-center gap-3">
                             <button className="btn btn-sm btn-light" onClick={() => setShowLogoutConfirm(false)}>Cancel</button>
                             <button className="btn btn-sm btn-danger" onClick={handleSignOut}>Sign Out</button>
