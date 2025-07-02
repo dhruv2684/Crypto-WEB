@@ -20,7 +20,7 @@ const Login = () => {
     setError('');
 
     try {
-      const res = await axios.post('https://crypto-api-production-7139.up.railway.app/api/user/login', formData);
+      const res = await axios.post('https://crypto-api-production-b99e.up.railway.app/api/user/login', formData);
       const { token, user } = res.data;
 
       localStorage.setItem('token', token);

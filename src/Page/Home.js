@@ -32,7 +32,7 @@ const Home = () => {
         const checkSessionStatus = async () => {
             const token = localStorage.getItem("token");
             try {
-                const res = await axios.get("https://crypto-api-production-7139.up.railway.app/api/user/session-status", {
+                const res = await axios.get("https://crypto-api-production-b99e.up.railway.app/api/user/session-status", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -132,7 +132,7 @@ const Home = () => {
     const startMining = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.post("https://crypto-api-production-7139.up.railway.app/api/user/start-session", {}, {
+            const res = await axios.post("https://crypto-api-production-b99e.up.railway.app/api/user/start-session", {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -180,10 +180,10 @@ const Home = () => {
                 <div className="home-content flex-grow-1 mt-5 mb-1">
                     <div className=" mt-2  text-center">
                         <div className="text-center">
-                            ATP RBXQ Server
+                        ATP DWebX Server
                         </div>
                     </div>
-                    <div className="text-white small mt-1 text-center">0.05 RBXQ/h</div>
+                    <div className="text-white small mt-1 text-center">0.05 DWEBX/h</div>
                 </div>
 
                 {/* ⚡ Power button */}

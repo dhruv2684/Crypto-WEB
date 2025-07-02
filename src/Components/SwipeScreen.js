@@ -52,8 +52,7 @@ const SwipeScreen = () => {
       <div className="content-wrapper">
         <div className="top-section">
           <div className="logo">
-            <div className="icon-placeholder">🟦</div>
-            <h1 className="h1">Rabbit XQ</h1>
+            <h1 className="h1">DWebX</h1>
           </div>
           <h2 className="h2">Experience the future</h2>
           <p className="p">

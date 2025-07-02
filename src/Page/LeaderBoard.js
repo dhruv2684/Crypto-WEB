@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FaUsers, FaRocket } from 'react-icons/fa';
 import Sidebar from '../Components/Sidebar';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LeaderBoard = () => {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ const LeaderBoard = () => {
 
     const fetchTopUsers = async () => {
         try {
-            const response = await fetch("crypto-api-production-7139.up.railway.app/api/user/top-user");
+            const response = await fetch("https://crypto-api-production-b99e.up.railway.app/api/user/top-user");
             const data = await response.json();
             setTopUsers(data.topUsers);
         } catch (error) {
@@ -35,7 +36,7 @@ const LeaderBoard = () => {
 
             <div className="text-center mt-5 pt-3">
                 <p className='px-3 fs-3 text-white'>
-                    Top 20 RabbitXQ User
+                    Top 20 DWebX User
                 </p>
             </div>
 
@@ -49,7 +50,7 @@ const LeaderBoard = () => {
                                 <span className="text-white fw-semibold">{user.username}</span>
                             </div>
                             <div className="text-white fw-semibold">
-                                {parseFloat(user.coins.$numberDecimal).toFixed(4)} <span className="text-info">RBXQ</span>
+                                {parseFloat(user.coins.$numberDecimal).toFixed(4)} <span className="text-info">DWX</span>
                             </div>
                         </div>
                     </div>

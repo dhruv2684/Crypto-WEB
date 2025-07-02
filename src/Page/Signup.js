@@ -39,7 +39,7 @@ const Signup = () => {
         setLoading(true);
         setMessage('');
         try {
-            const res = await axios.post('https://crypto-api-production-7139.up.railway.app/api/user/send-otp', { email: formData.email });
+            const res = await axios.post('https://crypto-api-production-b99e.up.railway.app/api/user/send-otp', { email: formData.email });
             setMessage('OTP sent to your email!');
             setStep(2);
         } catch (err) {
@@ -53,7 +53,7 @@ const Signup = () => {
         setLoading(true);
         setMessage('');
         try {
-            const res = await axios.post('https://crypto-api-production-7139.up.railway.app/api/user/register', formData);
+            const res = await axios.post('https://crypto-api-production-b99e.up.railway.app/api/user/register', formData);
             setMessage('Registration successful!');
             navigate('/login');
         } catch (err) {

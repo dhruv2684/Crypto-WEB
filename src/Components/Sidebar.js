@@ -61,18 +61,18 @@ const Sidebar = ({ children, sidebarOpen, setSidebarOpen, coins, coinChangeAnim 
                                     : '*'.repeat(coins?.toFixed(4).length || 6)
                             }
                         </span>
-                        <span>RBXQ</span>
+                        <span>DWX</span>
                     </div>
                 )}
 
                 {/* App Title */}
-                <span className="navbar-brand ms-2">RabbitXQ</span>
+                <span className="navbar-brand ms-2">DWebX</span>
             </nav>
 
             {/* Sidebar */}
             <div className={`sidebar ${isOpen ? 'open' : ''}`}>
                 <div className="sidebar-header">
-                    <span className="sidebar-logo">RabbitXQ</span>
+                    <span className="sidebar-logo">DWebX</span>
                     <button className="close-btn" onClick={closeSidebar}><FaTimes /></button>
                 </div>
                 <ul>
@@ -80,7 +80,7 @@ const Sidebar = ({ children, sidebarOpen, setSidebarOpen, coins, coinChangeAnim 
                         <li><FaHome className='me-2 fs-3 text-purple' />Home</li>
                     </Link>
                     <Link to="/rabbit-release" className="text-white text-decoration-none">
-                        <li><IoRocket className='me-2 fs-3 text-purple' />Rabbit Releases</li>
+                        <li><IoRocket className='me-2 fs-3 text-purple' />DWebX Releases</li>
                     </Link>
                     <Link to="/group" className="text-white text-decoration-none">
                         <li><MdGroups className='me-2 fs-3 text-purple' />Group</li>

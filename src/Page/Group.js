@@ -25,7 +25,7 @@ const Group = () => {
         const fetchReferralData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('https://crypto-api-production-7139.up.railway.app/api/user/get-refer-user', {
+                const response = await axios.get('https://crypto-api-production-b99e.up.railway.app/api/user/get-refer-user', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -94,7 +94,7 @@ const Group = () => {
                         <div className="text-white fw-semibold">
                             {user.coins?.$numberDecimal
                                 ? `${parseFloat(user.coins.$numberDecimal).toFixed(4)}`
-                                : '0.0000'} <span className="text-info">BDAG</span>
+                                : '0.0000'} <span className="text-info">DWX</span>
                         </div>
                     </div>
                 </div>
