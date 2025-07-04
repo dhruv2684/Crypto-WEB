@@ -3,7 +3,8 @@
   height: 100vh;
   color: white;
   overflow-x: hidden;
-  z-index: 0; /* Ensure it's clickable */
+  z-index: 0;
+  /* Ensure it's clickable */
 }
 
 /* 🌄 Background image layer with opacity */
@@ -29,9 +30,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, #030308, #04192e); /* 👈 Gradient top to bottom */
+  background: linear-gradient(0deg, #030308, #04192e);
+  /* 👈 Gradient top to bottom */
   z-index: -1;
-  opacity: 0.6; /* 👈 Control gradient strength */
+  opacity: 0.6;
+  /* 👈 Control gradient strength */
 }
 
 
@@ -52,19 +55,42 @@
   margin-bottom: 80px;
 }
 
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 10px #05111d, 0 0 20px #1061b3;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #0a2c4a, 0 0 40px #1a73e8;
+  }
+
+  100% {
+    box-shadow: 0 0 10px #05111d, 0 0 20px #1061b3;
+  }
+}
+
 .power-circle {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.0);
-  /* Transparent dark background */
-  border: 2px solid white;
-  box-shadow: 0 0 15px #05111d, 0 0 30px #1061b3;
-  /* Purple glow */
-  backdrop-filter: blur(3px);
-  /* Optional: adds soft blur behind the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  animation: glowAnimation 2s ease-in-out infinite;
 }
+
+.image-logo {
+  width: 250px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.title-text {
+  font-family: 'MyFont', sans-serif;
+}
+
 
 
 .center-icon {

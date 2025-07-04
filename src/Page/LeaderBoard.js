@@ -47,7 +47,7 @@ const LeaderBoard = () => {
                         <div className="leaderboard-card d-flex align-items-center justify-content-between px-3 py-2 rounded-4 shadow-sm w-100">
                             <div className="d-flex align-items-center gap-3">
                                 <div className="rank-circle fw-bold">#{index + 1}</div>
-                                <span className="text-white fw-semibold">{user.username}</span>
+                                <span className="text-white fw-semibold">{user._id?.slice(0, 8)}.....</span>
                             </div>
                             <div className="text-white fw-semibold">
                                 {parseFloat(user.coins.$numberDecimal).toFixed(4)} <span className="text-info">DWX</span>

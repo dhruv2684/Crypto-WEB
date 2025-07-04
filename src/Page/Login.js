@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/Auth.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Logo from '../image/logo-copy.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -39,8 +40,9 @@ const Login = () => {
 
   return (
     <div className="auth-wrapper">
-      <div className="auth-box">
-        <h2>LOGO With Login</h2>
+      <div className="auth-box text-center">
+        <img src={Logo} width="70%" className='text-center' alt="" />
+        <h2 className='text-color'>Login</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="email"

@@ -8,7 +8,10 @@ import CountUp from 'react-countup';
 import socket from '../utils/socket';
 import releases from '../releaseData';
 import { toast, ToastContainer } from 'react-toastify';
+import Logo from '../image/logo-only-d.png'
 import 'react-toastify/dist/ReactToastify.css';
+import '../css/font.css';
+
 
 const Home = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -179,28 +182,29 @@ const Home = () => {
                 {/* ✅ Removed coin display from center */}
                 <div className="home-content flex-grow-1 mt-5 mb-1">
                     <div className=" mt-2  text-center">
-                        <div className="text-center">
+                        <div className="text-center title-text l-w fs-5">
                         ATP DWebX Server
                         </div>
                     </div>
-                    <div className="text-white small mt-1 text-center">0.05 DWEBX/h</div>
+                    <div className="text-white small mt-1 text-center title-text fs-6"><span className='fs-3'>0.05 </span> DWEBX / h</div>
                 </div>
 
                 {/* ⚡ Power button */}
                 <div className="d-flex justify-content-center align-items-center mt-5 pt-5">
                     <div className="power-circle d-flex justify-content-center align-items-center">
-                        <FaBolt size={48} color="white" />
+                        {/* <FaBolt size={48} color="white" /> */}
+                        <img src={Logo} className='image-logo ' alt="" />
                     </div>
                 </div>
 
                 {/* 🟢 Mining button */}
                 <div className="text-center mtb-5">
                     {miningStartTime ? (
-                        <button className="btn mt-4 btn-success px-5 rounded-pill" disabled>
+                        <button className="btn mt-4 btn-success px-5 rounded-pill title-text_2" disabled>
                             {timeLeft || "Mining..."}
                         </button>
                     ) : (
-                        <button className="btn btn-primary_2 px-5 mt-5 rounded-pill" onClick={startMining}>
+                        <button className="btn btn-primary_2 px-5 mt-5 rounded-pill title-text_2" onClick={startMining}>
                             Start Mining
                         </button>
                     )}

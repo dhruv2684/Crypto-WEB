@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Auth.css';
+import Logo from '../image/logo-copy.png';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -64,8 +65,9 @@ const Signup = () => {
 
     return (
         <div className="auth-wrapper">
-            <div className="auth-box">
-                <h2>LOGO With SignUp</h2>
+            <div className="auth-box text-center">
+                <img src={Logo} width="70%" className='text-center' alt="" />
+                <h2 className='text-color'>Sign-Up</h2>
                 {message && <p style={{ color: '#ccc', fontSize: '14px' }}>{message}</p>}
 
                 {step === 1 && (

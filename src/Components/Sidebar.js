@@ -5,7 +5,9 @@ import {
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { IoRocket, IoSettings } from 'react-icons/io5';
 import { MdGroups, MdLeaderboard } from 'react-icons/md';
+import Logo from '../image/logo-copy.png'
 import './SidebarLayout.css';
+import '../css/font.css';
 
 const Sidebar = ({ children, sidebarOpen, setSidebarOpen, coins, coinChangeAnim }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -61,12 +63,13 @@ const Sidebar = ({ children, sidebarOpen, setSidebarOpen, coins, coinChangeAnim 
                                     : '*'.repeat(coins?.toFixed(4).length || 6)
                             }
                         </span>
-                        <span>DWX</span>
+                        <span className=''>DWX</span>
                     </div>
                 )}
 
                 {/* App Title */}
-                <span className="navbar-brand ms-2">DWebX</span>
+                {/* <span className="navbar-brand ms-2">DWebX</span> */}
+                <img src={Logo} className='w-25' alt="" />
             </nav>
 
             {/* Sidebar */}
@@ -91,9 +94,9 @@ const Sidebar = ({ children, sidebarOpen, setSidebarOpen, coins, coinChangeAnim 
                     <Link to="/profile" className="text-white text-decoration-none">
                         <li><IoSettings className='me-2 fs-3 text-purple' />Setting</li>
                     </Link>
-                    <Link to="#" className="text-white text-decoration-none">
+                    {/* <Link to="#" className="text-white text-decoration-none">
                         <li><FaQuestionCircle className='me-2 fs-3 text-purple' />FAQ</li>
-                    </Link>
+                    </Link> */}
                     <span className="text-white text-decoration-none" onClick={() => setShowLogoutConfirm(true)}>
                         <li><FaSignOutAlt className='me-2 fs-3 text-purple' />Sign Out</li>
                     </span>

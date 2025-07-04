@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/SwipeScreen.css';
+import Logo from '../image/logo-copy.png'
 
 const SwipeScreen = () => {
   const containerRef = useRef(null);
@@ -52,7 +53,8 @@ const SwipeScreen = () => {
       <div className="content-wrapper">
         <div className="top-section">
           <div className="logo">
-            <h1 className="h1">DWebX</h1>
+            {/* <h1 className="h1">DWebX</h1> */}
+            <img src={Logo} width="80%" alt="" />
           </div>
           <h2 className="h2">Experience the future</h2>
           <p className="p">
