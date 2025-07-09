@@ -9,6 +9,7 @@ import Signup from './Page/Signup';
 import Login from './Page/Login';
 import RabbitRelease from './Page/Rabbitrelease';
 import SwipeScreen from './Components/SwipeScreen';
+import ForgotPassword from './Components/ForgotPassword';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/leaderboard" element={<LeaderBoard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/rabbit-release" element={<RabbitRelease />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </Router>
   );

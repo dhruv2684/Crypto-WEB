@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/SwipeScreen.css';
-import Logo from '../image/logo-copy.png'
+import Logo from '../image/logo-2.2.png'
 
 const SwipeScreen = () => {
   const containerRef = useRef(null);

@@ -5,7 +5,7 @@ import {
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { IoRocket, IoSettings } from 'react-icons/io5';
 import { MdGroups, MdLeaderboard } from 'react-icons/md';
-import Logo from '../image/logo-copy.png'
+import Logo from '../image/logo-2.2.png'
 import './SidebarLayout.css';
 import '../css/font.css';
 

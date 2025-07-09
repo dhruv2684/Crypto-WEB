@@ -8,7 +8,7 @@ import CountUp from 'react-countup';
 import socket from '../utils/socket';
 import releases from '../releaseData';
 import { toast, ToastContainer } from 'react-toastify';
-import Logo from '../image/logo-only-d.png'
+import Logo from '../image/logo-only-d-1.png'
 import 'react-toastify/dist/ReactToastify.css';
 import '../css/font.css';
 

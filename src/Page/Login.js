@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../css/Auth.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Logo from '../image/logo-copy.png';
+import Logo from '../image/logo-2.2.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,7 +21,10 @@ const Login = () => {
     setError('');
 
     try {
-      const res = await axios.post('https://crypto-api-production-b99e.up.railway.app/api/user/login', formData);
+      const res = await axios.post(
+        'https://crypto-api-production-b99e.up.railway.app/api/user/login',
+        formData
+      );
       const { token, user } = res.data;
 
       localStorage.setItem('token', token);
@@ -41,8 +44,8 @@ const Login = () => {
   return (
     <div className="auth-wrapper">
       <div className="auth-box text-center">
-        <img src={Logo} width="70%" className='text-center' alt="" />
-        <h2 className='text-color'>Login</h2>
+        <img src={Logo} width="70%" className="text-center" alt="Logo" />
+        <h2 className="text-color">Login</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -62,14 +65,30 @@ const Login = () => {
             value={formData.password}
             required
           />
-          <button className="btn btn-success w-100 mt-3" type="submit">Login</button>
+
+          {/* Forgot Password link */}
+          <div className="text-end mt-1">
+            <span
+              style={{ cursor: 'pointer', color: '#1e7ad6', fontSize: '0.9rem' }}
+              onClick={() => navigate('/forgot-password')}
+            >
+              Forgot Password?
+            </span>
+          </div>
+
+          <button className="btn btn-success w-100 mt-3" type="submit">
+            Login
+          </button>
         </form>
 
         {error && <p className="text-danger mt-2">{error}</p>}
 
         <p className="switch-link mt-3 text-center">
           Don't have an account?{' '}
-          <span onClick={() => navigate('/signup')} style={{ cursor: 'pointer', color: '#1e7ad6' }}>
+          <span
+            onClick={() => navigate('/signup')}
+            style={{ cursor: 'pointer', color: '#1e7ad6' }}
+          >
             Sign up
           </span>
         </p>

@@ -4,7 +4,6 @@
   color: white;
   overflow-x: hidden;
   z-index: 0;
-  /* Ensure it's clickable */
 }
 
 /* 🌄 Background image layer with opacity */
@@ -31,13 +30,9 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, #030308, #04192e);
-  /* 👈 Gradient top to bottom */
   z-index: -1;
   opacity: 0.6;
-  /* 👈 Control gradient strength */
 }
-
-
 
 .bg-dark {
   background: linear-gradient(280deg, #030308, #04192e) !important;
@@ -49,23 +44,46 @@
 }
 
 .home-content {
-  /* overflow-y: auto; */
   padding: 20px 10px;
   margin-top: 70px;
   margin-bottom: 80px;
 }
 
+/* 🌟 Glow animation */
 @keyframes glowAnimation {
   0% {
     box-shadow: 0 0 10px #05111d, 0 0 20px #1061b3;
   }
-
   50% {
     box-shadow: 0 0 20px #0a2c4a, 0 0 40px #1a73e8;
   }
-
   100% {
     box-shadow: 0 0 10px #05111d, 0 0 20px #1061b3;
+  }
+}
+
+/* 🔍 Zoom in/out animation */
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 10px #05111d, 0 0 20px #1061b3;
+  }
+  50% {
+    box-shadow: 0 0 20px #0a2c4a, 0 0 40px #1a73e8;
+  }
+  100% {
+    box-shadow: 0 0 10px #05111d, 0 0 20px #1061b3;
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -73,25 +91,24 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.0);
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-
   animation: glowAnimation 2s ease-in-out infinite;
+  /* only shadow glow */
 }
 
 .image-logo {
   width: 250px;
   height: auto;
   margin-left: 10px;
+  animation: zoomInOut 2s ease-in-out infinite; /* only image zooms */
 }
 
 .title-text {
   font-family: 'MyFont', sans-serif;
 }
-
-
 
 .center-icon {
   position: relative;
@@ -99,22 +116,9 @@
   left: 12px;
 }
 
-/* .icon-wrapper {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(to right, #0f0f3e, #1658e5);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 4px 15px rgba(22, 88, 229, 0.5);
-  transition: transform 0.3s ease;
-} */
-
 .icon-wrapper:hover {
   transform: scale(1.1);
 }
-
 
 .coin-animated {
   animation: pulseCoin 0.5s ease-out;
@@ -122,22 +126,19 @@
 }
 
 .bg-black {
-  background: linear-gradient(180deg, #030308, #04192e) !important
+  background: linear-gradient(180deg, #030308, #04192e) !important;
 }
 
 .bg-dark_1 {
-  /* background: linear-gradient(to right, #000000, #000000) !important; */
   padding: 12px 50px;
   border-radius: 30px 30px 0px 0px;
   border-top: 2px solid #155fa8;
 }
 
 .bg-dark_2 {
-  /* background: linear-gradient(to left, #000000, #000000) !important; */
   border-top: 2px solid #155fa8;
   padding: 12px 50px;
   border-radius: 30px 30px 0px 0px;
-
 }
 
 .btn-primary_2 {
@@ -147,35 +148,25 @@
   border: none;
 }
 
-
 .py-1 {
   padding-top: 9px !important;
   padding-bottom: .25rem !important;
 }
-
-
-
-
-
 
 @keyframes pulseCoin {
   0% {
     transform: scale(1);
     color: #ffffff;
   }
-
   50% {
     transform: scale(1.3);
     color: #00ffcc;
   }
-
   100% {
     transform: scale(1);
     color: #ffffff;
   }
 }
-
-
 
 .coin-animated {
   animation: coinFlash 0.5s ease;

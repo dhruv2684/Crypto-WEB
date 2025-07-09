@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Auth.css';
-import Logo from '../image/logo-copy.png';
+import Logo from '../image/logo-2.2.png';
 
 const Signup = () => {
     const navigate = useNavigate();
