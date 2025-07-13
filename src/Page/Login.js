@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Auth.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Logo from '../image/logo-2.2.png';
 
 const Login = () => {
+
+  useEffect(() => {
+    document.title = "Login Page | DWebX WebApp";
+  }, []);
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',

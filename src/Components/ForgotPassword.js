@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Auth.css';
 import Logo from '../image/logo-2.2.png';
 
 const ForgotPassword = () => {
+
+  useEffect(() => {
+    document.title = "Forgot Password | Your App Name";
+  }, []);
+
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -66,7 +71,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      await axios.post('https://crypto-api-production-b99e.up.railway.app//api/user/reset-password', {
+      await axios.post('https://crypto-api-production-b99e.up.railway.app/api/user/reset-password', {
         email: formData.email,
         enteredOtp: formData.enteredOtp,
         password: formData.password,

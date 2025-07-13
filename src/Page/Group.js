@@ -15,6 +15,7 @@ const Group = () => {
     const [referredUsers, setReferredUsers] = useState([]);
 
     useEffect(() => {
+        document.title = "Group Page  | DWebX WebApp";
         const token = localStorage.getItem("token");
         if (!token) {
             navigate("/login");

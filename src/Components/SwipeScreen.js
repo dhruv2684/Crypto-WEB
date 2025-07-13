@@ -12,6 +12,7 @@ const SwipeScreen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Swipe Screen| DWebX WebApp";
     const token = localStorage.getItem('token');
     if (!token) {
       navigate('/login');

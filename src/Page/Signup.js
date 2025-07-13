@@ -23,6 +23,7 @@ const Signup = () => {
 
     // GET REFERRAL CODE FROM URL ONCE
     useEffect(() => {
+        document.title = "Sign-up Page  | DWebX WebApp";
         const params = new URLSearchParams(location.search);
         const ref = params.get('ref');
         if (ref) {

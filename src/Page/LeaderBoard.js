@@ -11,6 +11,7 @@ const LeaderBoard = () => {
     const [topUsers, setTopUsers] = useState([]);
 
     useEffect(() => {
+        document.title = "LeaderBoard Screen | DWebX WebApp";
         const token = localStorage.getItem("token");
         if (!token) {
             navigate("/login");

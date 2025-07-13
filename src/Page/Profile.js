@@ -25,6 +25,7 @@ const Profile = () => {
 
 
     useEffect(() => {
+        document.title = "Your Profile | DWebX WebApp";
         const fetchUser = async () => {
             try {
                 const token = localStorage.getItem('token');

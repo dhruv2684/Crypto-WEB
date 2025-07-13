@@ -9,6 +9,7 @@ const RabbitRelease = () => {
 
   // 🔁 Lock body scroll when modal is open
   useEffect(() => {
+    document.title = "Rabbit-Release | DWebX WebApp";
     document.body.style.overflow = selectedRelease ? 'hidden' : 'auto';
     return () => {
       document.body.style.overflow = 'auto';

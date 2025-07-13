@@ -25,6 +25,7 @@ const Home = () => {
     const prevCoinsRef = useRef(0);
 
     useEffect(() => {
+        document.title = "Home Page | DWebX WebApp";
         const token = localStorage.getItem("token");
         if (!token) {
             navigate("/login");
@@ -183,7 +184,7 @@ const Home = () => {
                 <div className="home-content flex-grow-1 mt-5 mb-1">
                     <div className=" mt-2  text-center">
                         <div className="text-center title-text l-w fs-5">
-                        ATP DWebX Server
+                            ATP DWebX Server
                         </div>
                     </div>
                     <div className="text-white small mt-1 text-center title-text fs-6"><span className='fs-3'>0.05 </span> DWEBX / h</div>
