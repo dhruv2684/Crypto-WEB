@@ -4,6 +4,8 @@ import { FaUsers, FaRocket } from 'react-icons/fa';
 import Sidebar from '../Components/Sidebar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Logo from '../image/logo-only-d-1.png'
+
 
 const LeaderBoard = () => {
     const navigate = useNavigate();
@@ -58,17 +60,24 @@ const LeaderBoard = () => {
                 ))}
             </div>
 
-            {/* Fixed Bottom Navigation */}
-            <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black mt-5">
+            {/* ⬇️ Fixed bottom menu */}
+            <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black align-items-center">
                 <div className="text-center bg-dark_1" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />
                     <span className="d-block">Group</span>
                 </div>
-                <div className="text-center bg-dark_2 text-pulple fw-bold" onClick={() => navigate('/leaderboard')}>
+
+                {/* 🔵 Center Logo Button */}
+                <div className="center-logo-button" onClick={() => navigate('/home')}>
+                    <img src={Logo} alt="Logo" className="center-logo-img" />
+                </div>
+
+                <div className="text-center bg-dark_2 text-pulple" onClick={() => navigate('/leaderboard')}>
                     <FaRocket size={24} />
                     <span className="d-block">Board</span>
                 </div>
             </div>
+
         </div>
     );
 };

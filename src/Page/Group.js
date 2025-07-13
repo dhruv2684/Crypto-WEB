@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Logo from '../image/logo-only-d-1.png'
+
 
 const Group = () => {
     const navigate = useNavigate();
@@ -66,15 +68,16 @@ const Group = () => {
         <div className="home-container d-flex flex-column text-white">
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-            <div className="text-center mt-5 pt-5">
-                <p className='mb-1 text-secondary fw-semibold'>
-                    Referral Code :- <span className='text-info fs-5'>{referralCode}</span>
+
+
+            <div className="text-center mt-5 pt-5 d-flex align-items-center justify-content-between mx-3">
+                <p className='mb-0 text-secondary fw-bold Copy_code'>
+                    <span className='text-info fs-5'>{referralCode}</span>
                 </p>
 
-                <div className='text-secondary fw-semibold'>
-                    Referral Link :-
-                    <button className="btn btn-info mt-2 ms-2 px-4 py-1 fw-semibold" onClick={handleCopyLink}>
-                        Copy Link
+                <div className='bg-share-link fw-semibold'>
+                    <button className="btn btn-info px-4 py-1 fw-semibold fs-5" onClick={handleCopyLink}>
+                        Copied Link
                     </button>
                 </div>
             </div>
@@ -101,11 +104,18 @@ const Group = () => {
                 </div>
             ))}
 
-            <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black">
-                <div className="text-center bg-dark_1 fw-bold text-pulple" onClick={() => navigate('/group')}>
+            {/* ⬇️ Fixed bottom menu */}
+            <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black align-items-center">
+                <div className="text-center bg-dark_1 text-pulple" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />
                     <span className="d-block">Group</span>
                 </div>
+
+                {/* 🔵 Center Logo Button */}
+                <div className="center-logo-button" onClick={() => navigate('/home')}>
+                    <img src={Logo} alt="Logo" className="center-logo-img" />
+                </div>
+
                 <div className="text-center bg-dark_2" onClick={() => navigate('/leaderboard')}>
                     <FaRocket size={24} />
                     <span className="d-block">Board</span>

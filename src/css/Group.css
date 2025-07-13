@@ -79,11 +79,11 @@
 .btn-info {
   background-color: transparent !important;
   border: none !important;
-  color: #1b70c5 !important;
+  color: white !important;
   font-weight: 600 !important;
   text-align: center !important;
   padding: 0 0 0 0 !important;
-  margin: 0 0 0 10px !important;
+  margin: 0 0 0 0px !important;
 }
 
 /* Make default toast icon white */
@@ -94,4 +94,39 @@
 /* Make progress bar white */
 .Toastify__progress-bar {
   background: white !important;
+}
+
+.bg-share-link{
+  background-color: #1b70c5;
+  padding: 14px 35px;
+  display: inline;
+  border-radius: 30px;
+}
+.Copy_code{
+  padding: 14px 48px;
+  border: 1px solid #1b70c5;
+  display: inline;
+  border-radius: 30px;
+}
+
+.center-logo-button {
+  width: 65px;
+  height: 65px;
+  /* background: linear-gradient(160deg, #04192e, #05111d); */
+  background-color: #030308;
+  border-radius: 50%;
+  border: 2px solid #155fa8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px #155fa8;
+  z-index: 10;
+}
+
+.center-logo-img {
+  width: 100px;
+  height: auto;
+  margin-left: 3px;
+  animation: zoomInOut 2s ease-in-out infinite;
 }

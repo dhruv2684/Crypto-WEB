@@ -201,12 +201,12 @@ const Home = () => {
                 {/* 🟢 Mining button */}
                 <div className="text-center mtb-5">
                     {miningStartTime ? (
-                        <button className="btn mt-4 btn-success px-5 rounded-pill title-text_2" disabled>
-                            {timeLeft || "Mining..."}
+                        <button className="btn mt-4 btn-primary_3 px-5 rounded-pill title-text_2" disabled>
+                            <span className="mining-timer-animated ">{timeLeft || "Mining..."}</span>
                         </button>
                     ) : (
-                        <button className="btn btn-primary_2 px-5 mt-5 rounded-pill title-text_2" onClick={startMining}>
-                            Start Mining
+                        <button className="btn btn-primary_2 text-white px-5 mt-5 rounded-pill title-text_2" onClick={startMining}>
+                            Active DWebX Mining
                         </button>
                     )}
                 </div>
@@ -241,16 +241,23 @@ const Home = () => {
             </div>
 
             {/* ⬇️ Fixed bottom menu */}
-            <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black">
+            <div className="fixed-bottom py-md-3 py-1 d-flex justify-content-between bg-black align-items-center">
                 <div className="text-center bg-dark_1" onClick={() => navigate('/group')}>
                     <FaUsers size={24} />
                     <span className="d-block">Group</span>
                 </div>
+
+                {/* 🔵 Center Logo Button */}
+                <div className="center-logo-button" onClick={() => navigate('/home')}>
+                    <img src={Logo} alt="Logo" className="center-logo-img" />
+                </div>
+
                 <div className="text-center bg-dark_2" onClick={() => navigate('/leaderboard')}>
                     <FaRocket size={24} />
                     <span className="d-block">Board</span>
                 </div>
             </div>
+
 
             {/* ✅ Toast Container */}
             <ToastContainer position="top-center" autoClose={2000} hideProgressBar={false} />
