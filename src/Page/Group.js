@@ -7,6 +7,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Logo from '../image/logo-only-d-1.png'
+import SocialAd from '../Ads/SocialAd';
 
 
 const Group = () => {
@@ -68,7 +69,8 @@ const Group = () => {
         <div className="home-container d-flex flex-column text-white">
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-
+            {/* ADs */}
+            <SocialAd />
 
             <div className="text-center mt-5 pt-5 d-flex align-items-center justify-content-between mx-3">
                 <p className='mb-0 text-secondary fw-bold Copy_code'>

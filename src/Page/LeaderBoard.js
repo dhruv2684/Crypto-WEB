@@ -5,6 +5,7 @@ import Sidebar from '../Components/Sidebar';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Logo from '../image/logo-only-d-1.png'
+import SocialAd from '../Ads/SocialAd';
 
 
 const LeaderBoard = () => {
@@ -13,6 +14,7 @@ const LeaderBoard = () => {
     const [topUsers, setTopUsers] = useState([]);
 
     useEffect(() => {
+        <SocialAd />
         document.title = "LeaderBoard Screen | DWebX WebApp";
         const token = localStorage.getItem("token");
         if (!token) {
@@ -36,6 +38,9 @@ const LeaderBoard = () => {
         <div className="home-container d-flex flex-column text-white">
 
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+            {/* ADs */}
+            <SocialAd />
 
             <div className="text-center mt-5 pt-3">
                 <p className='px-3 fs-3 text-white'>

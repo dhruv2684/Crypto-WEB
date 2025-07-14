@@ -151,8 +151,8 @@
 .btn-primary_2 {
   background: linear-gradient(260deg, #0a0a23, #155fa834) !important;
   border: 1px solid #1061b3 !important;
-  padding: 20px 35px;
-  color: rgb(180, 176, 176);
+  padding: 15px 35px;
+  color: rgb(255, 255, 255);
   font-weight: 500;
   font-size: 18px;
   border: none;
@@ -161,8 +161,8 @@
 .btn-primary_3 {
   background: linear-gradient(260deg, #0a0a23, #155fa834) !important;
   border: 1px solid #1061b3 !important;
-  padding: 20px 60px !important;
-  color: rgb(255, 248, 248) !important;
+  padding: 15px 60px !important;
+  color: rgb(255, 253, 253) !important;
   font-weight: 500;
   font-size: 18px;
   border: none;
@@ -219,4 +219,15 @@
   height: auto;
   margin-left: 3px;
   animation: zoomInOut 2s ease-in-out infinite;
+}
+
+.btn-boost-coin {
+  background: linear-gradient(260deg, #040431, #011e3b34) !important;
+  border: 1px solid #1061b367 !important;
+  padding: 8px 16px;
+  color: rgba(255, 254, 254, 0.692);
+  font-weight: 500;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
 }
