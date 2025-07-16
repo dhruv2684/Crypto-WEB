@@ -96,13 +96,14 @@
   background: white !important;
 }
 
-.bg-share-link{
+.bg-share-link {
   background-color: #1b70c5;
   padding: 14px 35px;
   display: inline;
   border-radius: 30px;
 }
-.Copy_code{
+
+.Copy_code {
   padding: 14px 48px;
   border: 1px solid #1b70c5;
   display: inline;
@@ -129,4 +130,16 @@
   height: auto;
   margin-left: 3px;
   animation: zoomInOut 2s ease-in-out infinite;
+}
+
+.referral-box {
+  /* background-color: #0c0c0f; */
+  border: 1px solid #1b70c571;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  color: white;
+  width: 95%;
+  margin-left: 5px ;
+  /* font-size: 16px; */
 }
